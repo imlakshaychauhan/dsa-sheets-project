@@ -22,7 +22,10 @@ export const NavLink = styled(Link)`
   height: 100%;
   cursor: pointer;
   &.active {
-    color: #f0f6f7;
+    color:#256ce1;
+  }
+  &:hover {
+    color:#256ce1;
   }
 `;
 
@@ -53,6 +56,7 @@ export const NavMenu = styled.div`
   @media screen and (max-width: 768px) {
     display: none;
   }
+  
 `;
 
 export const NavBtn = styled.nav`
@@ -65,6 +69,7 @@ export const NavBtn = styled.nav`
   @media screen and (max-width: 768px) {
     display: none;
   }
+
 `;
 
 export const NavBtnLink = styled(Link)`
@@ -81,7 +86,7 @@ export const NavBtnLink = styled(Link)`
   margin-left: 24px;
   &:hover {
     transition: all 0.2s ease-in-out;
-    background:     ;
+    background: ;
     color: #010606;
   }
 `;
