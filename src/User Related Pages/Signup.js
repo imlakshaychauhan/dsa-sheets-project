@@ -26,6 +26,7 @@ const Signup = () => {
         } catch {
             setError('Failed to create an account')
         }
+        
         if(!error && setGreeting('Account created successfully'))
         setLoading(false);
     }

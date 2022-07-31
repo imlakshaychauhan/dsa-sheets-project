@@ -1,0 +1,15 @@
+.dropdown
+{
+    margin: auto;
+    margin-top: 3%;
+    border: 1px solid #dadada;
+    box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.2s;
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.op {
+    padding: 1%;
+}

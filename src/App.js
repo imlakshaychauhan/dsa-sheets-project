@@ -2,11 +2,12 @@ import React from 'react'
 import Navbar from './Navbar Components/Navbar'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css'
-import Home from './User Related Pages/Home'
+import Home from './Homepage Components/Home'
 import Login from './User Related Pages/Login'
 import Signup from './User Related Pages/Signup'
 import { AuthProvider } from './User Related Pages/AuthContext';
 import ForgotPage from './User Related Pages/ForgotPage'
+import NeetCode from './NeetCode Sheet/NeetCode';
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/signup" element={<Signup />} />
             <Route exact path="/forgot-password" element={<ForgotPage />} />
+            <Route exact path="/neetcode" element={<NeetCode />} />
         </Routes>
         </AuthProvider>
       </Router>
