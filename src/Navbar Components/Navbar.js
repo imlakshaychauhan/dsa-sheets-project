@@ -27,14 +27,14 @@ const Navbar = () => {
     <>
       <Nav>
         <NavLink to="/">
-          <h1>Logo</h1>
+          <img src={require("./logo.jpeg")} alt="DSA Sheets" style={{ height:"100%", width:"100%" }} />
         </NavLink>
         <Bars />
         <NavMenu>
           <NavLink to="/" activeStyle>
             Home
           </NavLink>
-
+          
           {currentUser && (
             <>
               <Button onClick={handleShow} variant="primary">Profile</Button>

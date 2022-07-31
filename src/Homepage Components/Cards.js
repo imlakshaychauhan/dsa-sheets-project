@@ -33,7 +33,7 @@ const Cards = () => {
         <div class="child">
           <Card
             chitra="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMa1kN05sznKRhLYZjbFSpkKLE6cvWsMjo_BZrFesFvV4FSSXTvBpBVRuew-k0VpqPqcw&usqp=CAU"
-            title="Let's Solve More"
+            title="Love Babbar Sheet"
             description="Solve Some More Best of LC"
             link="/leetcode"
           />
