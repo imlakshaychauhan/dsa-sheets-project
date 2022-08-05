@@ -1,26 +1,37 @@
 import React from "react";
+import "./footer.css";
 
 const Footer = () => {
   return (
-    <div>
-      <div
-        className="text-center p-3"
-        style={{
-          backgroundColor: "rgba(0, 0, 0, 0.2)",
-          position: "relative",
-          height: "50px",
-          bottom: 0,
-          width: "100%",
-        }}
-      >
-        &copy; {new Date().getFullYear()}{" "}
-        <a
-          className="text-dark"
-          href="https://github.com/imlakshaychauhan/dsa-sheets-project/"
-        >
-          GitHub
-        </a>
-      </div>
+    <div class="footer-basic">
+      <footer>
+        <div class="social">
+          <a href="/#">
+            <i class="icon ion-social-instagram"></i>
+          </a>
+          <a href="/#">
+            <i class="icon ion-social-snapchat"></i>
+          </a>
+          <a href="/#">
+            <i class="icon ion-social-twitter"></i>
+          </a>
+          <a href="/#">
+            <i class="icon ion-social-facebook"></i>
+          </a>
+        </div>
+        <ul class="list-inline">
+          <li class="list-inline-item">
+            <a href="/#">HOME</a>
+          </li>
+          <li class="list-inline-item">
+            <a href="/#">TEAM</a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://youtu.be/b68ujpUFjCA">CLICK ME</a>
+          </li>
+        </ul>
+        <p class="copyright">BADMAASH COMPANY AKA DABRI BOIZ © 2022</p>
+      </footer>
     </div>
   );
 };

@@ -8,7 +8,7 @@ const Dropdown = () => {
   const [questions, setQuestions] = useState([]);
   const [topics, setTopics] = useState([]);
   useEffect(() => {
-    const apiUrl = `https://script.googleusercontent.com/macros/echo?user_content_key=ibUQs9oThZTg-rku_hVGV-Z1p6sq0bCFCxGNppc43WhCWzJ1XtVUW1KVN9C_P8Ipb-NY6awZidD-SFbcV-cnqxyqkOtiHEpSm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnDuGPEvX1K5VjQaFW0GNwiNipTVDeKgRUdqnfElKnPT9mbxdjCNpu7p4I_rV0ShCjo3hyOYDEwM0peTuP1Nb09aKmw2BazI66Q&lib=M7_9_wM_cJmPVaLPQrqCSbGf7zQye5QxY`;
+    const apiUrl = `https://script.googleusercontent.com/macros/echo?user_content_key=2q3rvNx7SIu2CbCTWaQyadyaEGPvtqVADjZgI8KjVlNivoql8D6Cdh9ETSmuLf86-1ADPlefJwxcnh4tR7sMNiKQJpHl-ZoUm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnBtpBVPs_oiMsc2LVQ22ZYFk9QYWg7tZjGLu4-pGpCkm8GvXVOhei8F0nhYq2WIXo1ANoT05ASYFY-2DFnJTIVyPr1zNuXnCBQ&lib=M_TDJuMet8CPFqFJiXtaSYNiR4gTsQqJ6`;
     const getBlindData = async () => {
       try {
         const res = await axios.get(apiUrl);
@@ -23,7 +23,7 @@ const Dropdown = () => {
   useEffect(() => {
     let temp = [];
     questions.map((q, i) => {
-      temp.push(q.Topic);
+      temp.push(q.topics);
       return temp;
     });
     setTopics([...new Set(temp)]);
@@ -34,7 +34,10 @@ const Dropdown = () => {
       {topics.length > 0 ? (
         topics.map((q, i) => {
           return (
-            <div className="dropdown" style={{ marginLeft: "4%", marginRight: "4%", marginTop: "2%" }}>
+            <div
+              className="dropdown"
+              style={{ marginLeft: "4%", marginRight: "4%", marginTop: "2%" }}
+            >
               <Accordion>
                 <Accordion.Item eventKey="0">
                   <Accordion.Header>
@@ -46,8 +49,8 @@ const Dropdown = () => {
                     {questions
                       .filter(
                         (question) =>
-                          question.Topic === topics[i] &&
-                          question.Level === "Easy"
+                          question.topics === topics[i] &&
+                          question.level === "Easy"
                       )
                       .map((q, ind) => {
                         return (
@@ -60,21 +63,25 @@ const Dropdown = () => {
                                       <Form.Check.Input
                                         type="checkbox"
                                         isValid
+                                        style={{
+                                          width: "25px",
+                                          height: "25px",
+                                        }}
                                       />
                                     </Form.Check>
                                   </div>
                                 </Form>
                                 <a
-                                  href={q.Link}
+                                  href={q.question_links}
                                   target="_blank"
                                   rel="noreferrer"
                                 >
                                   <h5>
-                                    <strong>{q.Question}</strong>
+                                    <strong>{q.question}</strong>
                                   </h5>
                                 </a>
                                 <div style={{ marginLeft: "1%" }}>
-                                  <h5>[{q.Level}]</h5>
+                                  <h5>[{q.level}]</h5>
                                 </div>
                               </div>
                             </li>
@@ -84,8 +91,8 @@ const Dropdown = () => {
                     {questions
                       .filter(
                         (question) =>
-                          question.Topic === topics[i] &&
-                          question.Level === "Medium"
+                          question.topics === topics[i] &&
+                          question.level === "Medium"
                       )
                       .map((q, ind) => {
                         return (
@@ -98,21 +105,25 @@ const Dropdown = () => {
                                       <Form.Check.Input
                                         type="checkbox"
                                         isValid
+                                        style={{
+                                          width: "25px",
+                                          height: "25px",
+                                        }}
                                       />
                                     </Form.Check>
                                   </div>
                                 </Form>
                                 <a
-                                  href={q.Link}
+                                  href={q.question_links}
                                   target="_blank"
                                   rel="noreferrer"
                                 >
                                   <h5>
-                                    <strong>{q.Question}</strong>
+                                    <strong>{q.question}</strong>
                                   </h5>
                                 </a>
                                 <div style={{ marginLeft: "1%" }}>
-                                  <h5>[{q.Level}]</h5>
+                                  <h5>[{q.level}]</h5>
                                 </div>
                               </div>
                             </li>
@@ -122,8 +133,8 @@ const Dropdown = () => {
                     {questions
                       .filter(
                         (question) =>
-                          question.Topic === topics[i] &&
-                          question.Level === "Hard"
+                          question.topics === topics[i] &&
+                          question.level === "Hard"
                       )
                       .map((q, ind) => {
                         return (
@@ -131,26 +142,30 @@ const Dropdown = () => {
                             <li className="list-group-item">
                               <div className="d-flex">
                                 <Form>
-                                  <div key="checkbox" className="mb-3 mx-4  ">
+                                  <div key="checkbox" className="mb-3 mx-4">
                                     <Form.Check type="checkbox" id="">
                                       <Form.Check.Input
                                         type="checkbox"
                                         isValid
+                                        style={{
+                                          width: "25px",
+                                          height: "25px",
+                                        }}
                                       />
                                     </Form.Check>
                                   </div>
                                 </Form>
                                 <a
-                                  href={q.Link}
+                                  href={q.question_links}
                                   target="_blank"
                                   rel="noreferrer"
                                 >
                                   <h5>
-                                    <strong>{q.Question}</strong>
+                                    <strong>{q.question}</strong>
                                   </h5>
                                 </a>
                                 <div style={{ marginLeft: "1%" }}>
-                                  <h5>[{q.Level}]</h5>
+                                  <h5>[{q.level}]</h5>
                                 </div>
                               </div>
                             </li>
