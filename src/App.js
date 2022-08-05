@@ -8,6 +8,8 @@ import Signup from './User Related Pages/Signup'
 import { AuthProvider } from './User Related Pages/AuthContext';
 import ForgotPage from './User Related Pages/ForgotPage'
 import NeetCode from './NeetCode Sheet/NeetCode';
+import Blind from './Blind 75 Sheet/Blind'
+import Footer from './Homepage Components/Footer'
 
 const App = () => {
   return (
@@ -21,7 +23,9 @@ const App = () => {
             <Route exact path="/signup" element={<Signup />} />
             <Route exact path="/forgot-password" element={<ForgotPage />} />
             <Route exact path="/neetcode" element={<NeetCode />} />
+            <Route exact path="/blind" element={<Blind />} />
         </Routes>
+        <Footer />
         </AuthProvider>
       </Router>
     </>
