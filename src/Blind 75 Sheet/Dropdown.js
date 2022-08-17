@@ -30,7 +30,7 @@ const Dropdown = () => {
   }, [questions]);
 
   return (
-    <>
+    <div className="dropdown_container">
       {topics.length > 0 ? (
         topics.map((q, i) => {
           return (
@@ -170,7 +170,7 @@ const Dropdown = () => {
           </Spinner>
         </div>
       )}
-    </>
+    </div>
   );
 };
 

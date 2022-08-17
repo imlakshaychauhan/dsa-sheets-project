@@ -24,14 +24,14 @@ const Navbar = () => {
   }
 
   return (
-    <>
+    <div >
       <Nav>
         <NavLink to="/">
           <img src={require("./logo.jpeg")} alt="DSA Sheets" style={{ height:"100%", width:"100%" }} />
         </NavLink>
         <Bars />
         <NavMenu>
-          <NavLink to="/" activeStyle>
+          <NavLink to="/" >
             Home
           </NavLink>
           
@@ -75,7 +75,7 @@ const Navbar = () => {
           )}
         </NavMenu>
       </Nav>
-    </>
+    </div>
   );
 };
 

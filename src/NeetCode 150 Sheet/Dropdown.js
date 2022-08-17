@@ -3,6 +3,7 @@ import Accordion from "react-bootstrap/Accordion";
 import Form from "react-bootstrap/Form";
 import axios from "axios";
 import Spinner from "react-bootstrap/Spinner";
+import "./Dropdown.css";
 
 const Dropdown = () => {
   const [questions, setQuestions] = useState([]);
@@ -30,13 +31,13 @@ const Dropdown = () => {
   }, [questions]);
 
   return (
-    <>
+    <div className="dropdown_container">
       {topics.length > 0 ? (
         topics.map((q, i) => {
           return (
             <div
               className="dropdown"
-              style={{ marginLeft: "4%", marginRight: "4%", marginTop: "2%" }}
+            // style={{ marginLeft: "4%", marginRight: "4%", marginTop: "2%" }}
             >
               <Accordion>
                 <Accordion.Item eventKey="0">
@@ -185,7 +186,7 @@ const Dropdown = () => {
           </Spinner>
         </div>
       )}
-    </>
+    </div>
   );
 };
 

@@ -4,75 +4,59 @@ import "./Cards.css";
 
 const Cards = () => {
   return (
-    <div class="grand_parent">
-      <div class="parents">
-        <div class="child">
+    <div className="grand_parent">
+      <div className="parents">
+        <div className="child">
           <Card
-            chitra="https://i.ytimg.com/an/rMj6KnxZu5M/10656977316200473306_mq.jpg?v=629d537d"
+            chitra="https://i.ytimg.com/an/DmWirHqCq1s/10656977316200473306_mq.jpg?v=62c49873"
             title="NeetCode 150"
             description="I am NeetCode.io"
             link="/neetcode"
           />
         </div>
-        <div class="child">
-          <Card
+        <div className="child">
+          <Card 
             chitra="https://styles.redditmedia.com/t5_3mlga/styles/communityIcon_xbxfbfvisgz41.png"
             title="Blind 75"
             description="I am Blind75"
             link="/blind"
           />
         </div>
-        <div class="child">
+        <div className="child">
           <Card
-            chitra="https://media-exp1.licdn.com/dms/image/C4E0BAQECIHPgBEVFfw/company-logo_200_200/0/1579133319834?e=2147483647&v=beta&t=SikB1xyrbARLYjS7zQ72oRNt6T9lTTIwtDw38D8MSPk"
+            chitra="https://www.striver.careers/Striver%20Orange%20Stack.png"
             title="Striver SDE Sheet"
             description="I am Striver"
             link="/striver"
           />
         </div>
-        <div class="child">
+        <div className="child">
           <Card
-            chitra="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMa1kN05sznKRhLYZjbFSpkKLE6cvWsMjo_BZrFesFvV4FSSXTvBpBVRuew-k0VpqPqcw&usqp=CAU"
+            chitra="https://tenowl.com/wp-content/uploads/2021/09/Love-Babbar-DSA-Cracker-Sheet-450-Questions-1024x671.webp"
             title="Love Babbar Sheet"
-            description="Solve Some More Best of LC"
-            link="/leetcode"
+            description="I am love babbar"
+            link="/love"
+          />
+        </div>
+        <div className="child">
+          <Card
+            chitra="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRV9NRlI79mSrQGTFEVcX_3_7m_T1-SprpuL-QRwtfonyU5ibAqBS9eTb8T5DGd3XtpOw&usqp=CAU"
+            title="Aman Dhattarwal Sheet"
+            description="I am aman"
+            link="/aman"
+          />
+        </div>
+        <div className="child">
+          <Card
+            chitra="https://i.ytimg.com/vi/NXQi_g1pVqI/mqdefault.jpg"
+            title="Fraz Sheet"
+            description="i am fraz"
+            link="/fraz"
           />
         </div>
       </div>
-      <div class="parents">
-        <div class="child">
-          <Card
-            chitra={require("./loading_spinner.gif")}
-            title="Coming Soon"
-            description="I am NeetCode.io"
-            link="/"
-          />
-        </div>
-        <div class="child">
-          <Card
-            chitra={require("./loading_spinner.gif")}
-            title="Coming Soon"
-            description="I am Blind75"
-            link="/"
-          />
-        </div>
-        <div class="child">
-          <Card
-            chitra={require("./loading_spinner.gif")}
-            title="Coming Soon"
-            description="I am Striver"
-            link="/"
-          />
-        </div>
-        <div class="child">
-          <Card
-            chitra={require("./loading_spinner.gif")}
-            title="Coming Soon"
-            description="Solve Some More Best of LC"
-            link="/"
-          />
-        </div>
-      </div>
+     
+       
     </div>
   );
 };
