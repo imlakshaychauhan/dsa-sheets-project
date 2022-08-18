@@ -1,0 +1,8 @@
+body{
+    margin: 0; padding: 0; box-sizing: border-box;
+    --tw-bg-opacity: 1;
+    background-color: rgb(247 248 250/var(--tw-bg-opacity));
+}
+body::-webkit-scrollbar {
+    display: none;
+  }

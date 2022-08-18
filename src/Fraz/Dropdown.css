@@ -1,0 +1,21 @@
+.dropdown_container{
+    margin-top: 1rem;
+    display: flex;
+  justify-content:center;
+  flex-wrap: wrap;
+  
+}
+.dropdown{
+    text-decoration: none;
+    margin-top: 2rem;
+    width: 21rem;
+ margin-right: 3rem;
+}
+.list-group-item a{
+    /* text-decoration: none; */
+    color: black;
+    cursor: pointer;
+}
+.accordion{
+    box-shadow: 1px 1px 15px #71c1d5;
+}

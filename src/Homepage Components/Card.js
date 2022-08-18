@@ -20,6 +20,7 @@ const Card = ({ chitra, title, description, link }) => {
                   {title}
                 </strong>
               </Link>
+              {/* <p>{description}</p> */}
             </h4>
             {/* <p class="card-text">By {description}</p> */}
             <Link to={link} class="btn btn-primary">

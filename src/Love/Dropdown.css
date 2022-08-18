@@ -1,0 +1,20 @@
+.dropdown_container{
+   
+    margin-top: 1rem;
+    display: flex;
+  justify-content:center;
+  flex-wrap: wrap;
+  /* align-items: flex-start; */
+  /* flex-direction: row; */
+}
+.dropdown{
+    text-decoration: none;
+    margin-top: 2rem;
+    width: 21rem;
+ margin-right: 3rem;
+}
+.list-group-item a{
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
