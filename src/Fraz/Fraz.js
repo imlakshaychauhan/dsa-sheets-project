@@ -1,8 +1,9 @@
 import React from 'react'
+import Dropdown from './Dropdown'
 
 const Fraz = () => {
   return (
-    <div>Fraz</div>
+    <div><Dropdown/></div>
   )
 }
 
