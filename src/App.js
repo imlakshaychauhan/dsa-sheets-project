@@ -9,7 +9,6 @@ import { AuthProvider } from './User Related Pages/AuthContext';
 import ForgotPage from './User Related Pages/ForgotPage'
 import NeetCode from './NeetCode 150 Sheet/NeetCode';
 import Blind from './Blind 75 Sheet/Blind'
-import Footer from './Homepage Components/Footer'
 
 const App = () => {
   return (
@@ -25,7 +24,6 @@ const App = () => {
             <Route exact path="/neetcode" element={<NeetCode />} />
             <Route exact path="/blind" element={<Blind />} />
         </Routes>
-        <Footer />
         </AuthProvider>
       </Router>
     </>

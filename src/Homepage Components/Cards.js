@@ -39,41 +39,7 @@ const Cards = () => {
           />
         </div>
       </div>
-      <div class="parents">
-        <div class="child">
-          <Card
-            chitra={require("./loading_spinner.gif")}
-            title="Coming Soon"
-            description="I am NeetCode.io"
-            link="/"
-          />
-        </div>
-        <div class="child">
-          <Card
-            chitra={require("./loading_spinner.gif")}
-            title="Coming Soon"
-            description="I am Blind75"
-            link="/"
-          />
-        </div>
-        <div class="child">
-          <Card
-            chitra={require("./loading_spinner.gif")}
-            title="Coming Soon"
-            description="I am Striver"
-            link="/"
-          />
-        </div>
-        <div class="child">
-          <Card
-            chitra={require("./loading_spinner.gif")}
-            title="Coming Soon"
-            description="Solve Some More Best of LC"
-            link="/"
-          />
-        </div>
       </div>
-    </div>
   );
 };
 
