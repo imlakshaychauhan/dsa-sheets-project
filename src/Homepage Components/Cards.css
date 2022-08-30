@@ -34,8 +34,9 @@
 .child:hover {
     transform: scale(1.02);
 }
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .grand_parent {
         height: auto;
-    }
-}
+        
+    } */
+/* } */

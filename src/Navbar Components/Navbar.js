@@ -1,82 +1,102 @@
+
 import React, { useState } from "react";
-import { useAuth } from "../User Related Pages/AuthContext";
-import { Nav, NavLink, Bars, NavMenu, NavBtnLink } from "./NavbarElement";
-import { useNavigate, Link } from "react-router-dom";
-import "./Navbar.css";
-import Modal from "react-bootstrap/Modal";
-import Button from "react-bootstrap/Button";
+import styled from "styled-components";
 
 const Navbar = () => {
-  const { logout, currentUser } = useAuth();
-  const navigate = useNavigate();
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
-  async function handleLogout() {
-    try {
-      await logout();
-      navigate("/", { replace: true });
-    } catch {
-      navigate("/", { replace: true });
-    }
-  }
-
+  const [isOpen, setIsOpen] = useState(false);
   return (
-    <div >
-      <Nav>
-        <NavLink to="/">
-          <img src={require("./logo.jpeg")} alt="DSA Sheets" style={{ height:"100%", width:"100%" }} />
-        </NavLink>
-        <Bars />
-        <NavMenu>
-          <NavLink to="/" >
-            Home
-          </NavLink>
-          
-          {currentUser && (
-            <>
-              <Button onClick={handleShow} variant="primary">Profile</Button>
-              <Modal
-                show={show}
-                onHide={handleClose}
-                backdrop="static"
-                keyboard={false}
-              >
-                <Modal.Header closeButton>
-                  <Modal.Title className="text-center">Profile</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                  <strong> Email: </strong> {currentUser.email}
-                </Modal.Body>
-                <Modal.Body>
-                  <Link to="/" className="btn btn-primary w-100">
-                    Update Profile
-                  </Link>
-                </Modal.Body>
-                <Modal.Footer>
-                  <Button variant="secondary" onClick={handleClose}>
-                    Close
-                  </Button>
-                  <Button variant="primary" onClick={handleLogout}> Log Out </Button>
-                </Modal.Footer>
-              </Modal>
-            </>
-          )}
-
-          {!currentUser && (
-            <>
-              <NavLink to="/signup" activeStyle>
-                Sign Up
-              </NavLink>
-              <NavBtnLink to="/login">Log In</NavBtnLink>
-            </>
-          )}
-        </NavMenu>
-      </Nav>
-    </div>
+    <Nav>
+      <Logo href="#">
+      <img src={require("./logo.jpeg")} alt="DSA Sheets" style={{ height:"6%", width:"8%" }} />
+        {/* Eli<span>Codes</span> */}
+      </Logo>
+      <Hamburger onClick={() => setIsOpen(!isOpen)}>
+        <span />
+        <span />
+        <span />
+      </Hamburger>
+      <Menu isOpen={isOpen}>
+        <MenuLink href="">Option </MenuLink>
+        <MenuLink href="">About</MenuLink>
+        <MenuLink href="">Option</MenuLink>
+        <MenuLink href="">Contact Us</MenuLink>
+      </Menu>
+    </Nav>
   );
 };
 
 export default Navbar;
+
+const MenuLink = styled.a`
+  padding: 1rem 2rem;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  color: #67bc98;
+  transition: all 0.3s ease-in;
+  font-size: 0.9rem;
+
+  &:hover {
+    color: #7b7fda;
+  }
+`;
+
+const Nav = styled.div`
+  padding: 0.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+`;
+
+const Logo = styled.a`
+  padding: 1rem 0;
+  color: #7b7fda;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 1.7rem;
+
+  span {
+    font-weight: 300;
+    font-size: 1.3rem;
+  }
+`;
+
+const Menu = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+
+  @media (max-width: 768px) {
+    overflow: hidden;
+    flex-direction: column;
+    max-height: ${({ isOpen }) => (isOpen ? "300px" : "0")};
+    transition: max-height 0.3s ease-in;
+    width: 100%;
+  }
+`;
+
+const Hamburger = styled.div`
+  display: none;
+
+  flex-direction: column;
+  cursor: pointer;
+
+  span {
+    height: 2px;
+    width: 25px;
+    background: #7b7fda;
+    margin-bottom: 4px;
+    border-radius: 5px;
+  }
+
+  @media (max-width: 768px) {
+    display: flex;
+  }
+`;

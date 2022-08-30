@@ -1,14 +1,27 @@
-.footer-basic {
-    margin-top: 0.5rem;
+.footer{
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: rgb(235, 195, 64);
+  position: sticky;
+  top: 100%;
+  /* bottom: 0;
+  left: 0;
+  width: 100%; */
+}
+/* .footer-basic {
+    /* margin-top: 0.5rem;
     padding: 0.5rem;
     /* background-color: rgb(229, 222, 81); */
-    position: relative;
+    /* position: relative;
     bottom: 0;
     left: 0;
     width: 100%;
     background-color:#decece;
-    color:#4b4c4d;
-  }
+    color:#4b4c4d; */ 
+    
+
+    
+  /* }
   
   .footer-basic ul {
     padding:0;
@@ -62,4 +75,4 @@
     font-size:12px;
     color:rgb(67, 63, 63);
     margin-bottom:0;
-  }
+  } */ 

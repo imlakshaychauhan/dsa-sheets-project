@@ -1,5 +1,6 @@
 import React from 'react'
 import Navbar from './Navbar Components/Navbar'
+import styled from "styled-components"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css'
 import Home from './Homepage Components/Home'
@@ -13,14 +14,15 @@ import Love from './Love/Love';
 import Fraz from './Fraz/Fraz';
 import Aman from './Aman/Aman';
 import Striver from './Striver/Striver';
-// import Footer from './Homepage Components/Footer'
+import Footer from './Homepage Components/Footer'
 
 const App = () => {
   return (
     <>
       <Router>
         <AuthProvider>
-      <Navbar />
+          <Navbar />
+          <Container>
         <Routes>
             <Route exact path="/" element={<Home />} />
             <Route exact path="/login" element={<Login />} />
@@ -33,11 +35,17 @@ const App = () => {
             <Route exact path="/fraz" element={<Fraz />} />
             <Route exact path="/aman" element={<Aman />} />
         </Routes>
+        </Container>
         {/* <Footer /> */}
         </AuthProvider>
+        
       </Router>
+      
     </>
   )
 }
-
+const Container = styled.div`
+  background: #67bc98;
+  height: 100vh;
+  `;
 export default App
