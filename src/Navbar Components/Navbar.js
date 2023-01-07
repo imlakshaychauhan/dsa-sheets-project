@@ -31,11 +31,17 @@ const Navbar = () => {
         </NavLink>
         <Bars />
         <NavMenu>
-          <NavLink to="/" activeStyle>
+          {/* <NavLink to="/" activeStyle>
             Home
           </NavLink>
+          <NavLink to="/about">
+            About Us
+          </NavLink>
+          <NavLink to="/write">
+            Write to Us
+          </NavLink> */}
           
-          {currentUser && (
+          {/* {currentUser && (
             <>
               <Button onClick={handleShow} variant="primary">Profile</Button>
               <Modal
@@ -72,7 +78,7 @@ const Navbar = () => {
               </NavLink>
               <NavBtnLink to="/login">Log In</NavBtnLink>
             </>
-          )}
+          )} */}
         </NavMenu>
       </Nav>
     </>

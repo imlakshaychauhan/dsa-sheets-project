@@ -10,7 +10,7 @@ const Dropdown = () => {
   const [progress, setProgress] = useState([]);
 
   useEffect(() => {
-    const apiUrl = `https://script.googleusercontent.com/macros/echo?user_content_key=2q3rvNx7SIu2CbCTWaQyadyaEGPvtqVADjZgI8KjVlNivoql8D6Cdh9ETSmuLf86-1ADPlefJwxcnh4tR7sMNiKQJpHl-ZoUm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnBtpBVPs_oiMsc2LVQ22ZYFk9QYWg7tZjGLu4-pGpCkm8GvXVOhei8F0nhYq2WIXo1ANoT05ASYFY-2DFnJTIVyPr1zNuXnCBQ&lib=M_TDJuMet8CPFqFJiXtaSYNiR4gTsQqJ6`;
+    const apiUrl = `https://script.googleusercontent.com/macros/echo?user_content_key=Pnqcy_Iu1jVfAOmUSFTEg1rL1-jk6YdWaZ_7cgNRJfiQJsenpGgHbV_p-HYcd84_LqW7Jus_XhswLi0mz-Pv3QcBNJj6b2CGm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnOCFtU0EOX9l2l7VFuITALUyK9pH5lMfLgTZABA9SeAtfBxhfDJxJ6yrTPPZmI18200m5BlkdfPMCS4C5BWXxc7sUIy0DR8xog&lib=Mleoq9Qldi_WIvMhOYxg-VLVfENuLWjom`;
     const getBlindData = async () => {
       try {
         const res = await axios.get(apiUrl);
@@ -22,10 +22,10 @@ const Dropdown = () => {
     getBlindData();
 
     // --> local storage part starts here
-    let data = JSON.parse(localStorage.getItem("neetcode_progress"));
+    let data = JSON.parse(localStorage.getItem("fraz_progress"));
     if (!data) {
-      const arr1 = new Array(151).fill(false);
-      localStorage.setItem("neetcode_progress", JSON.stringify(arr1));
+      const arr1 = new Array(314).fill(false);
+      localStorage.setItem("fraz_progress", JSON.stringify(arr1));
     } 
     else
       setProgress(data);
@@ -34,19 +34,19 @@ const Dropdown = () => {
   useEffect(() => {
     let temp = [];
     questions.map((q, i) => {
-      temp.push(q.topics);
+      temp.push(q.topic);
       return temp;
     });
     setTopics([...new Set(temp)]);
   }, [questions]);
 
   const handleCheck = (id) => {
-    let data = JSON.parse(localStorage.getItem("neetcode_progress"));
+    let data = JSON.parse(localStorage.getItem("fraz_progress"));
     if (data[id] === false) 
       data[id] = true;
     else
       data[id] = false;
-    localStorage.setItem("neetcode_progress", JSON.stringify(data));
+    localStorage.setItem("fraz_progress", JSON.stringify(data));
     setProgress(data);
   };
 
@@ -70,7 +70,7 @@ const Dropdown = () => {
                     {questions
                       .filter(
                         (question) =>
-                          question.topics === topics[i] &&
+                          question.topic === topics[i] &&
                           question.level === "Easy"
                       )
                       .map((q, ind) => {
@@ -95,7 +95,7 @@ const Dropdown = () => {
                                   </div>
                                 </Form>
                                 <a
-                                  href={q.question_links}
+                                  href={q.links}
                                   target="_blank"
                                   rel="noreferrer"
                                 >

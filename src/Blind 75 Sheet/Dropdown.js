@@ -7,6 +7,7 @@ import Spinner from "react-bootstrap/Spinner";
 const Dropdown = () => {
   const [questions, setQuestions] = useState([]);
   const [topics, setTopics] = useState([]);
+  const [progress, setProgress] = useState([]);
 
   useEffect(() => {
     const apiUrl = `https://script.googleusercontent.com/macros/echo?user_content_key=ibUQs9oThZTg-rku_hVGV-Z1p6sq0bCFCxGNppc43WhCWzJ1XtVUW1KVN9C_P8Ipb-NY6awZidD-SFbcV-cnqxyqkOtiHEpSm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnDuGPEvX1K5VjQaFW0GNwiNipTVDeKgRUdqnfElKnPT9mbxdjCNpu7p4I_rV0ShCjo3hyOYDEwM0peTuP1Nb09aKmw2BazI66Q&lib=M7_9_wM_cJmPVaLPQrqCSbGf7zQye5QxY`;
@@ -19,6 +20,13 @@ const Dropdown = () => {
       }
     };
     getBlindData();
+    let data = JSON.parse(localStorage.getItem("blind_progress"));
+    if (!data) {
+      const arr1 = new Array(76).fill(false);
+      localStorage.setItem("blind_progress", JSON.stringify(arr1));
+    } 
+    else
+      setProgress(data);
   }, []);
 
   useEffect(() => {
@@ -29,6 +37,16 @@ const Dropdown = () => {
     });
     setTopics([...new Set(temp)]);
   }, [questions]);
+
+  const handleCheck = (id) => {
+    let data = JSON.parse(localStorage.getItem("blind_progress"));
+    if (data[id] === false) 
+      data[id] = true;
+    else
+      data[id] = false;
+    localStorage.setItem("blind_progress", JSON.stringify(data));
+    setProgress(data);
+  };
 
   return (
     <>
@@ -64,6 +82,12 @@ const Dropdown = () => {
                                       <Form.Check.Input
                                         type="checkbox"
                                         isValid
+                                        checked={progress[q.Id] === true}
+                                        onChange={() => handleCheck(q.Id)}
+                                        style={{
+                                          width: "25px",
+                                          height: "25px",
+                                        }}
                                       />
                                     </Form.Check>
                                   </div>
@@ -97,12 +121,18 @@ const Dropdown = () => {
                           <ul className="list-group list-group-flush">
                             <li className="list-group-item">
                               <div className="d-flex">
-                                <Form>
-                                  <div key="checkbox" className="mb-3 mx-4  ">
+                              <Form>
+                                  <div key="checkbox" className="mb-3 mx-4">
                                     <Form.Check type="checkbox" id="">
                                       <Form.Check.Input
                                         type="checkbox"
                                         isValid
+                                        checked={progress[q.Id] === true}
+                                        onChange={() => handleCheck(q.Id)}
+                                        style={{
+                                          width: "25px",
+                                          height: "25px",
+                                        }}
                                       />
                                     </Form.Check>
                                   </div>
@@ -136,12 +166,18 @@ const Dropdown = () => {
                           <ul className="list-group list-group-flush">
                             <li className="list-group-item">
                               <div className="d-flex">
-                                <Form>
-                                  <div key="checkbox" className="mb-3 mx-4  ">
+                              <Form>
+                                  <div key="checkbox" className="mb-3 mx-4">
                                     <Form.Check type="checkbox" id="">
                                       <Form.Check.Input
                                         type="checkbox"
                                         isValid
+                                        checked={progress[q.Id] === true}
+                                        onChange={() => handleCheck(q.Id)}
+                                        style={{
+                                          width: "25px",
+                                          height: "25px",
+                                        }}
                                       />
                                     </Form.Check>
                                   </div>

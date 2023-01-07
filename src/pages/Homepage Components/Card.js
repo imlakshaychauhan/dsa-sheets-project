@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 const Card = ({ chitra, title, description, link }) => {
   return (
     <div>
-      <div class="card my-2 mx-3" style={{ width: "20rem", padding: "3%" }}>
+      <div class="card my-2 mx-3 border border-0" style={{ width: "20rem", padding: "3%" }}>
         <Link to={link}>
           <img class="card-img-top" src={chitra} alt={title} />
-          <div class="card-body">
+          <div class="card-body " style={{ border: "none" }}>
             <h4 class="card-title">
               <Link to={link}>
                 <strong
@@ -21,7 +21,6 @@ const Card = ({ chitra, title, description, link }) => {
                 </strong>
               </Link>
             </h4>
-            {/* <p class="card-text">By {description}</p> */}
             <Link to={link} class="btn btn-primary">
               Let's Solve
             </Link>
