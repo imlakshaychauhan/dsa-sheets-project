@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/dsa-sheets-project/static/css/main.e7bcf59b.css",
+    "main.js": "/dsa-sheets-project/static/js/main.a529e557.js",
+    "static/media/logo.jpeg": "/dsa-sheets-project/static/media/logo.e788155196825dbc37fe.jpeg",
+    "index.html": "/dsa-sheets-project/index.html",
+    "main.e7bcf59b.css.map": "/dsa-sheets-project/static/css/main.e7bcf59b.css.map",
+    "main.a529e557.js.map": "/dsa-sheets-project/static/js/main.a529e557.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e7bcf59b.css",
+    "static/js/main.a529e557.js"
+  ]
+}
